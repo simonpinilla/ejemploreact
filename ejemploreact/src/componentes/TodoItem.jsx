@@ -1,10 +1,20 @@
 import React from "react"
+export function TodoItem({todo,cambiarEstado}){
+    const {id,taskcomplete}=todo
 
-export function TodoItem(){
-    return(
+    const fnCambiarEstado=()=>{
+        cambiarEstado(id);
+    }
+    return (
         <>
-            <li class="list-group-item list-group-item-action">Tarea 1</li>
-        
+            <li className="list-group-item">
+            <input className="form-check-input me-2" onChange={fnCambiarEstado} checked={complete} type="checkbox">       
+            </input>   
+            </li>
         </>
     )
-}
+
+
+
+
+
